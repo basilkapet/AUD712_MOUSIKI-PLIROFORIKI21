@@ -75,4 +75,22 @@ Env([0, 1, 0], [1, 1], \sine).test;
 
 (
 
+}
+)
+
+Env([0, 1, 0], [1, 1], \sine).plot;
+Env([0, 1, 0], [1, 1], \sine).test;
+
+(
+[
+	var sound1, sound2;
+	sound1 = { SinOsc.ar(400, 0, 0.1).dup }.play;
+	1.wait;
+	sound1.release;
+	0.1.wait;
+	sound1 = { SinOsc.ar(800, 0, 0.1).dup }.play;
+	0.5.wait;
+	sound1.release;
+].fork;
+)
 )
